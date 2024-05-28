@@ -3,8 +3,8 @@ const max = 100;
 
 const a = randomNumber(min, max);
 const b = randomNumber(min, max);
-// const c = randomNumber(min, max);
-const c = 'lorem'
+const c = randomNumber(min, max);
+
 console.log(a, b, c);
 
 const getSum = (a, b, c) => {
@@ -48,10 +48,33 @@ const isEven = (number) => {
 	}
 }
 
+const showInfo = (input, info) => {
+	try {
+		if (info !== null && info !== false && info !== true) {
+			throw new Error('Info parameter is not valid, should be \'true\', \'false\' or \'null\'');
+		}
+		
+		switch (info) {
+			case null:
+				return `Podany argument ${input} nie jest liczbą`;
+			case true:
+				return `Podany argument ${input} jest parzysty`;
+			case false:
+				return `Podany argument ${input} jest nieparzysty`;
+		}
+		
+	} catch (error) {
+		console.error(error.message);
+	}
+}
+
 console.log(getSum(a,b,c))
 console.log(isEven(a))
 console.log(isEven(b))
 console.log(isEven(c))
+console.log(showInfo(a, isEven(a)))
+console.log(showInfo(b, isEven(b)))
+console.log(showInfo(c, isEven(c)))
 
 function randomNumber(min, max) {
   return Math.round((Math.random() * (max - min)) + min);
