@@ -56,11 +56,14 @@ const showInfo = (input, info) => {
 		
 		switch (info) {
 			case null:
-				return `Podany argument ${input} nie jest liczbą`;
+				console.log(`Podany argument ${input} nie jest liczbą`);
+				break
 			case true:
-				return `Podany argument ${input} jest parzysty`;
+				console.log(`Podany argument ${input} jest parzysty`);
+				break
 			case false:
-				return `Podany argument ${input} jest nieparzysty`;
+				console.log(`Podany argument ${input} jest nieparzysty`);
+				break
 		}
 		
 	} catch (error) {
@@ -68,14 +71,10 @@ const showInfo = (input, info) => {
 	}
 }
 
-console.log(getSum(a,b,c))
-console.log(isEven(a))
-console.log(isEven(b))
-console.log(isEven(c))
-console.log(showInfo(a, isEven(a)))
-console.log(showInfo(b, isEven(b)))
-console.log(showInfo(c, isEven(c)))
-
 function randomNumber(min, max) {
   return Math.round((Math.random() * (max - min)) + min);
 }
+
+const sum = getSum(a,b,c)
+const isSumEven = isEven(sum)
+showInfo(sum, isSumEven)
