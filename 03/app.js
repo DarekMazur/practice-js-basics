@@ -3,13 +3,13 @@ const max = 100;
 
 const a = randomNumber(min, max);
 const b = randomNumber(min, max);
-const c = randomNumber(min, max);
-
+// const c = randomNumber(min, max);
+const c = 'lorem'
 console.log(a, b, c);
 
 const getSum = (a, b, c) => {
   try {
-    if (isNaN(Number(a)) || isNaN(b) || isNaN(c)) {
+    if (isNaN(Number(a)) || isNaN(Number(b)) || isNaN(Number(c))) {
       throw new Error('One of value is not a number');
     }
 		
@@ -36,7 +36,22 @@ const getSum = (a, b, c) => {
   }
 }
 
+const isEven = (number) => {
+	try {
+		if (isNaN(number)) throw new Error('Input value is not a number');
+		
+		return number % 2 === 0
+		
+	} catch (error) {
+		console.error(error.message);
+		return null
+	}
+}
+
 console.log(getSum(a,b,c))
+console.log(isEven(a))
+console.log(isEven(b))
+console.log(isEven(c))
 
 function randomNumber(min, max) {
   return Math.round((Math.random() * (max - min)) + min);
