@@ -13,3 +13,10 @@ const getRandomNumbers = (min, max) => {
 
 console.log(getRandomNumbers(min, max));
 
+const getLargest = (arr) => {
+	return arr.sort((a, b) => a - b).slice(-10);
+}
+
+const randomizeArray = getRandomNumbers(min, max)
+console.log(randomizeArray);
+console.log(getLargest(randomizeArray))
