@@ -1,5 +1,5 @@
-const min = 23;
-const max = 123;
+const min = 10;
+const max = 200;
 
 const getRandomNumbers = (min, max) => {
 	const randomNumbers = [];
@@ -17,6 +17,9 @@ const getLargest = (arr) => {
 	return arr.sort((a, b) => a - b).slice(-10);
 }
 
-const randomizeArray = getRandomNumbers(min, max)
-console.log(randomizeArray);
-console.log(getLargest(randomizeArray))
+const getAvg = (arr) => {
+	return arr.reduce((element, currentValue) => element + currentValue) / arr.length
+	
+}
+
+console.log(getAvg(getLargest(getRandomNumbers(min, max))))
